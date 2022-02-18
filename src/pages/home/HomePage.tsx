@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../App.module.css";
+import styles from "./HomePage.module.css";
 import { Header, Footer, Carousel, SideMenu, ProductCollection } from "../../components";
 import { Row, Col, Typography } from "antd";
 import { productList1, productList2, productList3 } from "./mockups";
@@ -9,7 +9,7 @@ import sideImage3 from '../../assets/images/sider_2019_02-04-2.png';
 
 export class HomePage extends React.Component {
     render() {
-      return (
+      return (  
         <>
             <Header />
             <div className={styles["page-content"]}>
@@ -50,7 +50,7 @@ export class HomePage extends React.Component {
                 />
             </div>
             <Footer /> 
-            </>
+        </>
       )  
     }
 } 
