@@ -78,10 +78,6 @@ export const sideMenuList = [
     },
   ];
   
-  /**
-   * 首页推荐产品数据
-   * */
-  // 爆款推荐
   export const productList1 = [
     {
       id: 1,
