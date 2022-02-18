@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Typography } from "antd";
-import { useNavigate, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 interface PropsType {
     id: string | number;
