@@ -6,7 +6,7 @@ export const productList1 = [
       price: "11990",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1015/600/400",
         },
       ],
     },
@@ -16,7 +16,7 @@ export const productList1 = [
       price: "13290",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1016/600/400",
         },
       ],
     },
@@ -26,7 +26,7 @@ export const productList1 = [
       price: "4000",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1018/600/400",
         },
       ],
     },
@@ -36,7 +36,7 @@ export const productList1 = [
       price: "7399",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1019/600/400",
         },
       ],
     },
@@ -46,7 +46,7 @@ export const productList1 = [
       price: "3499",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1022/600/400",
         },
       ],
     },
@@ -56,7 +56,7 @@ export const productList1 = [
       price: "5999",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1023/600/400",
         },
       ],
     },
@@ -66,7 +66,7 @@ export const productList1 = [
       price: "6199",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1028/600/400",
         },
       ],
     },
@@ -76,7 +76,7 @@ export const productList1 = [
       price: "13699",
       touristRoutePictures: [
         {
-          url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+          url: "https://picsum.photos/id/1029/600/400",
         },
       ],
     },
@@ -86,7 +86,7 @@ export const productList1 = [
       price: "5021",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1036/600/400",
         },
       ],
     },
@@ -101,7 +101,7 @@ export const productList1 = [
       price: "11990",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1037/600/400",
         },
       ],
     },
@@ -111,7 +111,7 @@ export const productList1 = [
       price: "13290",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1039/600/400",
         },
       ],
     },
@@ -121,7 +121,7 @@ export const productList1 = [
       price: "4000",
       touristRoutePictures: [
         {
-          url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+          url: "https://picsum.photos/id/1041/600/400",
         },
       ],
     },
@@ -131,7 +131,7 @@ export const productList1 = [
       price: "7399",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1044/600/400",
         },
       ],
     },
@@ -141,7 +141,7 @@ export const productList1 = [
       price: "3499",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1051/600/400",
         },
       ],
     },
@@ -151,7 +151,7 @@ export const productList1 = [
       price: "5999",
       touristRoutePictures: [
         {
-          url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+          url: "https://picsum.photos/id/1052/600/400",
         },
       ],
     },
@@ -161,7 +161,7 @@ export const productList1 = [
       price: "6199",
       touristRoutePictures: [
         {
-          url: "https://picsum.photos/seed/picsum/200/300",
+          url: "https://picsum.photos/id/1055/600/400",
         },
       ],
     },
@@ -171,7 +171,7 @@ export const productList1 = [
       price: "13699",
       touristRoutePictures: [
         {
-          url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+          url: "https://picsum.photos/id/1057/600/400",
         },
       ],
     },
