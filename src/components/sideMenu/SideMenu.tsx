@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SideMenu.module.css";
 import { sideMenuList } from "./mockup";
 import { Menu } from "antd";
-import { GifOutlined } from "@ant-design/icons";
+import { GiftOutlined } from "@ant-design/icons";
 
 export const SideMenu: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ export const SideMenu: React.FC = () => {
           key={`side-menu-${index}`}
           title={
             <span>
-              <GifOutlined />
+              <GiftOutlined />
               {m.title}
             </span>
           }
@@ -22,7 +22,7 @@ export const SideMenu: React.FC = () => {
               key={`sub-menu-${smindex}`}
               title={
                 <span>
-                  <GifOutlined />
+                  <GiftOutlined />
                   {sm.title}
                 </span>
               }
@@ -30,7 +30,7 @@ export const SideMenu: React.FC = () => {
               {sm.subMenu.map((sms, smsindex) => (
                 <Menu.Item key={`sub-sub-menu-${smsindex}`}>
                   <span>
-                    <GifOutlined />
+                    <GiftOutlined />
                     {sms}
                   </span>
                 </Menu.Item>
