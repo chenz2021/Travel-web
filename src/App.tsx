@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./App.module.css";
 import { Header, Footer, Carousel, SideMenu } from "./components";
 import { Row, Col } from "antd";
+import { productList1, productList2, productList3 }
 
 function App() {
   return (
