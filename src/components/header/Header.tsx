@@ -3,8 +3,11 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 export const Header: React.FC = () => {
+  const params = useParams();
+  const location = useLocation();
   return (
     <div className={styles.App}>
     <div className={styles["app-header"]}>
