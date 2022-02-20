@@ -83,7 +83,6 @@ class HomePageComponent extends React.Component<PropsType> {
     return (
       <>
         <Header />
-        {/* 页面内容 content */}
         <div className={styles["page-content"]}>
           <Row style={{ marginTop: 20 }}>
             <Col span={6}>
