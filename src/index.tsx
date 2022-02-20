@@ -6,6 +6,9 @@ import 'antd/dist/antd.css';
 import "./i18n/configs"
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import axios from "axios";
+
+axios.defaults.headers['x-icode'] = 'B0E49A57A82231CF';
 
 ReactDOM.render(
   <React.StrictMode>
