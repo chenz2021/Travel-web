@@ -3,69 +3,103 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
-import store from "../../redux/store";
-import { LanguageState } from "../../redux/languageReducer";
-
-interface State extends LanguageState {}
+import {
+  useNavigate,
+  useLocation,
+  useParams,
+  
+} from "react-router-dom";
+import { useSelector } from "../../redux/hooks";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
+import {
+  LanguageActionTypes,
+  addLanguageActionCreator,
+  changeLanguageActionCreator,
+} from "../../redux/language/languageActions";
+import { useTranslation } from "react-i18next";
 
 export const Header: React.FC = () => {
-  const params = useParams();
   const location = useLocation();
+  const params = useParams();
+  const language = useSelector((state) => state.language);
+  const languageList = useSelector((state) => state.languageList);
+  const dispatch = useDispatch();
+  // const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
+  const { t } = useTranslation();
+  let navigate = useNavigate();
+
+  const menuClickHandler = (e) => {
+    console.log(e);
+    if (e.key === "new") {
+      dispatch(addLanguageActionCreator("新语言", "new_lang"));
+    } else {
+      dispatch(changeLanguageActionCreator(e.key));
+    }
+  };
+
   return (
-    <div className={styles.App}>
     <div className={styles["app-header"]}>
       {/* top-header */}
       <div className={styles["top-header"]}>
         <div className={styles.inner}>
-          <Typography.Text>Lighten Up Your Trip</Typography.Text>
+          <Typography.Text>{t("header.slogan")}</Typography.Text>
           <Dropdown.Button
             style={{ marginLeft: 15 }}
             overlay={
-              <Menu>
-                <Menu.Item>中文</Menu.Item>
-                <Menu.Item>English</Menu.Item>
+              <Menu onClick={menuClickHandler}>
+                {languageList.map((l) => {
+                  return <Menu.Item key={l.code}>{l.name}</Menu.Item>;
+                })}
+                <Menu.Item key={"new"}>
+                  {t("header.add_new_language")}
+                </Menu.Item>
               </Menu>
             }
             icon={<GlobalOutlined />}
           >
-            Language
+            {language === "zh" ? "中文" : "English"}
           </Dropdown.Button>
           <Button.Group className={styles["button-group"]}>
-            <Button>Sign Up</Button>
-            <Button>Sign In</Button>
+            <Button onClick={() => navigate(`/register`)}>
+              {t("header.register")}
+            </Button>
+            <Button onClick={() => navigate(`/signIn`)}>
+              {t("header.signin")}
+            </Button>
           </Button.Group>
         </div>
       </div>
       <Layout.Header className={styles["main-header"]}>
-        <img src={logo} alt="logo" className={styles["App-logo"]} />
-        <Typography.Title level={3} className={styles.title}>
-          React Travel
-        </Typography.Title>
+        <span onClick={() => navigate(`/`)}>
+          <img src={logo} alt="logo" className={styles["App-logo"]} />
+          <Typography.Title level={3} className={styles.title}>
+            {t("header.title")}
+          </Typography.Title>
+        </span>
         <Input.Search
-          placeholder={"Please Enter Keyword"}
+          placeholder={"请输入旅游目的地、主题、或关键字"}
           className={styles["search-input"]}
         />
       </Layout.Header>
       <Menu mode={"horizontal"} className={styles["main-menu"]}>
-        <Menu.Item key={1}>Home</Menu.Item>
-        <Menu.Item key={2}>Weekend</Menu.Item>
-        <Menu.Item key={3}>Group</Menu.Item>
-        <Menu.Item key="4"> Solo </Menu.Item>
-        <Menu.Item key="5"> Private </Menu.Item>
-        <Menu.Item key="6"> Cruise </Menu.Item>
-        <Menu.Item key="7"> Hotel+Attractions </Menu.Item>
-        <Menu.Item key="8"> Local </Menu.Item>
-        <Menu.Item key="9"> Theme </Menu.Item>
-        <Menu.Item key="10"> Custom </Menu.Item>
-        <Menu.Item key="11"> Study Tour </Menu.Item>
-        <Menu.Item key="12"> Visa </Menu.Item>
-        <Menu.Item key="13"> Business </Menu.Item>
-        <Menu.Item key="14"> VIP </Menu.Item>
-        <Menu.Item key="15"> Outdoor </Menu.Item>
-        <Menu.Item key="16"> Insurance </Menu.Item>
+        <Menu.Item key="1"> {t("header.home_page")} </Menu.Item>
+        <Menu.Item key="2"> {t("header.weekend")} </Menu.Item>
+        <Menu.Item key="3"> {t("header.group")} </Menu.Item>
+        <Menu.Item key="4"> {t("header.backpack")} </Menu.Item>
+        <Menu.Item key="5"> {t("header.private")} </Menu.Item>
+        <Menu.Item key="6"> {t("header.cruise")} </Menu.Item>
+        <Menu.Item key="7"> {t("header.hotel")} </Menu.Item>
+        <Menu.Item key="8"> {t("header.local")} </Menu.Item>
+        <Menu.Item key="9"> {t("header.theme")} </Menu.Item>
+        <Menu.Item key="10"> {t("header.custom")} </Menu.Item>
+        <Menu.Item key="11"> {t("header.study")} </Menu.Item>
+        <Menu.Item key="12"> {t("header.visa")} </Menu.Item>
+        <Menu.Item key="13"> {t("header.enterprise")} </Menu.Item>
+        <Menu.Item key="14"> {t("header.high_end")} </Menu.Item>
+        <Menu.Item key="15"> {t("header.outdoor")} </Menu.Item>
+        <Menu.Item key="16"> {t("header.insurance")} </Menu.Item>
       </Menu>
     </div>
-    </div>
   );
-}
+};
