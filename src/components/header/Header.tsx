@@ -5,27 +5,19 @@ import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import {
   useNavigate,
-  useLocation,
-  useParams,
-  
 } from "react-router-dom";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
-import { Dispatch } from "redux";
 import {
-  LanguageActionTypes,
   addLanguageActionCreator,
   changeLanguageActionCreator,
 } from "../../redux/language/languageActions";
 import { useTranslation } from "react-i18next";
 
 export const Header: React.FC = () => {
-  const location = useLocation();
-  const params = useParams();
   const language = useSelector((state) => state.language);
   const languageList = useSelector((state) => state.languageList);
   const dispatch = useDispatch();
-  // const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
   const { t } = useTranslation();
   let navigate = useNavigate();
 
