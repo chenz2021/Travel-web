@@ -13,8 +13,16 @@ import sideImage2 from "../../assets/images/sider_2019_02-04.png";
 import sideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 import styles from "./HomePage.module.css";
 import { withTranslation, WithTranslation } from "react-i18next";
- 
-class HomePageComponent extends React.Component<WithTranslation> {
+import axios from "axios";
+
+interface State {
+    production: any[],
+}
+
+class HomePageComponent extends React.Component<WithTranslation, State> {
+
+
+
   render() {
     const { t } = this.props;
     return (
