@@ -28,8 +28,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     giveMeData: () => {
       dispatch(giveMeDataActionCreator());
-  }
-};
+    }
+  };
 }
 
 type PropsType = WithTranslation &
