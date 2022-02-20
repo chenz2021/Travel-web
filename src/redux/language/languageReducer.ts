@@ -7,17 +7,18 @@ export interface LanguageState {
 }
 
 const defaultState: LanguageState = {
-  language: "zh",
+  language: "en",
   languageList: [
-    { name: "中文", code: "zh" },
     { name: "English", code: "en" },
+    { name: "中文", code: "zh" },
+    
   ],
 };
 
 export default (state = defaultState, action: LanguageActionTypes) => {
   switch (action.type) {
     case CHANGE_LANGUAGE:
-      i18n.changeLanguage(action.payload); // 这样处理是不标准的，有副作用
+      i18n.changeLanguage(action.payload);
       return { ...state, language: action.payload };
     case ADD_LANGUAGE:
       return {
