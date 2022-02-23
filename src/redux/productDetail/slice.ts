@@ -5,7 +5,6 @@ interface ProductDetailState {
     loading: boolean;
     error: string | null;
     data: any
-
 }
 const initialState: ProductDetailState = {
     loading: true,
