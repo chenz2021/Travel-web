@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./App.module.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomePage, SignInPage, RegisterPage, DetailPage } from './pages'
+import { HomePage, SignInPage, RegisterPage, DetailPage, SearchPage } from './pages'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route path="/signIn" element={<SignInPage />} />
           <Route path="/register" element={<RegisterPage />}/>
           <Route path="/detail/:id" element={<DetailPage/>} />
+          <Route path="/search/?searchterm?" element={<SearchPage/>}/>
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>  
       </Router>     
