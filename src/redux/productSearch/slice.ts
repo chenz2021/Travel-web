@@ -14,19 +14,27 @@ const initialState: ProductSearchState = {
     pagination: null,
   };
 
-export const searchProduct = createAsyncThunk(
+  export const searchProduct = createAsyncThunk(
     "productSearch/searchProduct",
-    async (paramaters: {
-        keywords: string,
-        nextPage: number | string,
-        pageSize: number | string,
-    } , thunkAPI) => {
-        const { data } = await axios.get(
-          `http://123.56.149.216:8080/api/touristRoutes/${id}`
-        );
-        return data; 
+    async (
+      paramaters: {
+        keywords: string;
+        nextPage: number | string;
+        pageSize: number | string;
+      },
+      thunkAPI
+    ) => {
+      let url = `http://123.56.149.216:8080/api/touristRoutes?pageNumber=${paramaters.nextPage}&pageSize=${paramaters.pageSize}`;
+      if (paramaters.keywords) {
+        url += `&keyword=${paramaters.keywords}`;
+      }
+      const response = await axios.get(url);
+      return {
+        data: response.data,
+        pagination: JSON.parse(response.headers["x-pagination"]),
+      };
     }
-)
+  );
 
 export const productDetailSlice = createSlice({
     name: "productSearch",
