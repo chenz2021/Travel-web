@@ -12,7 +12,7 @@ function App() {
           <Route path="/signIn" element={<SignInPage />} />
           <Route path="/register" element={<RegisterPage />}/>
           <Route path="/detail/:id" element={<DetailPage/>} />
-          <Route path="/search/?searchterm?" element={<SearchPage/>}/>
+          <Route path="/search/:keywords?" element={<SearchPage/>}/>
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>  
       </Router>     
