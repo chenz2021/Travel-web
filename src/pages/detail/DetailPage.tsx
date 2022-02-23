@@ -8,12 +8,8 @@ import { DatePicker, Space } from "antd";
 
 const { RangePicker } = DatePicker;
 
-interface MatchParams {
-  touristRouteId: string;
-}
-
 export const DetailPage: React.FC = (): JSX.Element => {
-  const { touristRouteId } = useParams();
+  const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [product, setProduct] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +19,7 @@ export const DetailPage: React.FC = (): JSX.Element => {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `http://123.56.149.216:8080/api/touristRoutes/${touristRouteId}`
+          `http://123.56.149.216:8080/api/touristRoutes/${id}`
         );
         setProduct(data);
         setLoading(false);
