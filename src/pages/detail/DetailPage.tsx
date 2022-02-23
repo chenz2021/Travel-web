@@ -4,7 +4,7 @@ import axios from "axios";
 import { Spin, Row, Col } from "antd";
 import styles from "./DetailPage.module.css";
 import { Header, Footer, ProductIntro } from "../../components";
-import { DatePicker, Space, Divider, Typography } from "antd";
+import { DatePicker, Space, Divider, Typography, Anchor, Menu } from "antd";
 
 const { RangePicker } = DatePicker;
 
