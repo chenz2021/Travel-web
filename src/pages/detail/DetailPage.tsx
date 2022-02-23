@@ -4,7 +4,7 @@ import axios from "axios";
 import { Spin, Row, Col } from "antd";
 import styles from "./DetailPage.module.css";
 import { Header, Footer, ProductIntro } from "../../components";
-import { DatePicker, Space } from "antd";
+import { DatePicker, Space, Divider, Typography } from "antd";
 
 const { RangePicker } = DatePicker;
 
@@ -73,11 +73,26 @@ export const DetailPage: React.FC = (): JSX.Element => {
         <div className={styles["product-detail-anchor"]}></div>
 
         <div id="feature" className={styles["product-detail-container"]}></div>
-
+            <Divider orientation={'center'}>
+                <Typography.Title level={3}>Feature</Typography.Title>
+            </Divider>
+            <div dangerouslySetInnerHTML={{__html: product.features}}
+            style={{ margin: 50 }}>
+            </div>
         <div id="fees" className={styles["product-detail-container"]}></div>
-
+        <Divider orientation={'center'}>
+                <Typography.Title level={3}>Fees</Typography.Title>
+            </Divider>
+            <div dangerouslySetInnerHTML={{__html: product.fees}}
+            style={{ margin: 50 }}>
+            </div>
         <div id="notes" className={styles["product-detail-container"]}></div>
-
+            <Divider orientation={'center'}>
+                <Typography.Title level={3}>Notes</Typography.Title>
+            </Divider>
+            <div dangerouslySetInnerHTML={{__html: product.notes}}
+            style={{ margin: 50 }}>
+            </div>
         <div id="comments" className={styles["product-detail-container"]}></div>
       </div>
       <Footer />
