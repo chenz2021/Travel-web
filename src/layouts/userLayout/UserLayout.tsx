@@ -21,7 +21,7 @@ export const UserLayout: React.FC = (props) => {
           <Dropdown overlay={menu}>
             <Button>
               {" "}
-              选择语言 <CaretDownOutlined />
+              Language <CaretDownOutlined />
             </Button>
           </Dropdown>
         </div>
@@ -31,16 +31,16 @@ export const UserLayout: React.FC = (props) => {
           <div className={styles["content-header"]}>
             <Link to="/">
               <img alt="logo" className={styles["logo"]} src={logo} />
-              <span className={styles["title"]}>React 旅游网</span>
+              <span className={styles["title"]}>React Travel</span>
             </Link>
           </div>
           <div className={styles["desc"]}>
-            Hello
+            Hello Traveler
           </div>
           {props.children}
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>Footer就不写了，太累了</Footer>
+      <Footer style={{ textAlign: "center" }}>All Rights Reserved: React Travel</Footer>
     </Layout>
   );
 };
