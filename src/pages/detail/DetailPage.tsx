@@ -10,11 +10,13 @@ import { commentMockData as mockup } from "./mockup";
 import { productDetailSlice, getProductDetail } from "../../redux/productDetail/slice";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
+import { isJSDocSignature } from "typescript";
+import { MainLayout } from "../../layouts";
 
 const { RangePicker } = DatePicker;
 
 export const DetailPage: React.FC = (): JSX.Element => {
-  const { id } = useParams();
+  const {id} = useParams();
   
   const loading = useSelector((state) => state.productDetail.loading);
   const error = useSelector((state) => state.productDetail.error);
@@ -43,9 +45,7 @@ export const DetailPage: React.FC = (): JSX.Element => {
     return <div>Error Ocurred: {error}</div>;
   }
   return (
-    <>
-      <Header />
-      <div className={styles["page-content"]}>
+    <MainLayout>
         <div className={styles["product-intro-container"]}>
           <Row>
             <Col span={13}>
@@ -112,8 +112,7 @@ export const DetailPage: React.FC = (): JSX.Element => {
         <div id="comments" className={styles["product-detail-container"]}>
             <ProductComments data={mockup}/>
         </div>
-      </div>
-      <Footer />
-    </>
+      
+    </MainLayout>
   );
 };

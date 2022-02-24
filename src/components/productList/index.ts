@@ -1,1 +1,1 @@
-import * from './ProductList'
+export * from './ProductList'

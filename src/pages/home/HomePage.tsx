@@ -15,6 +15,8 @@ import { withTranslation, WithTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/store";
 import { giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions";
+import { MainLayout } from "../../layouts/mainLayout";
+
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -61,10 +63,8 @@ class HomePageComponent extends React.Component<PropsType> {
       return <div>Error Occured：{error}</div>;
     }
     return (
-      <>
-        <Header />
-        <div className={styles["page-content"]}>
-          <Row style={{ marginTop: 20 }}>
+      <MainLayout>
+        <Row style={{ marginTop: 20 }}>
             <Col span={6}>
               <SideMenu />
             </Col>
@@ -98,10 +98,10 @@ class HomePageComponent extends React.Component<PropsType> {
             }
             sideImage={sideImage3}
             products={productList[2].touristRoutes}
-          />
-        </div>
-        <Footer />
-      </>
+          />  
+      </MainLayout>
+          
+      
     );
   }
 }
