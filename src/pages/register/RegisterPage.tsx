@@ -1,6 +1,7 @@
 import React from "react";
 import { UserLayout } from "../../layouts/userLayout";
+import { RegisterForm } from ".";
 
 export const RegisterPage : React.FC = () => {
-    return <UserLayout>注册页面</UserLayout>;
+    return <UserLayout><RegisterForm/></UserLayout>;
 }
