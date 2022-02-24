@@ -1,5 +1,7 @@
 import { Form, Input, Button, Checkbox } from "antd";
 import styles from "./RegistrationForm.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const layout = {
   labelCol: { span: 8 },
@@ -10,8 +12,23 @@ const tailLayout = {
 };
 
 export const RegisterForm = () => {
-  const onFinish = (values: any) => {
+
+  const navigate = useNavigate();
+
+  const onFinish = async (values: any) => {
     console.log("Success:", values);
+    try {
+        await axios.post("http://123.56.149.216:8080/auth/register", {
+        email: values.username,
+        password: values.password,
+        confirmPassword: values.confirm,
+    });
+        navigate('/signIn/');
+    } catch (error) {
+        alert('Registration Failed!')
+    }
+    
+
   };
 
   const onFinishFailed = (errorInfo: any) => {
