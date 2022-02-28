@@ -14,6 +14,7 @@ import {
 } from "../../redux/language/languageActions";
 import { useTranslation } from "react-i18next";
 import jwt_decode, {JwtPayload as DefaultJwtPayload} from "jwt-decode";
+import { userSlice } from "../../redux/user/slice";
 
 interface JwtPayload extends DefaultJwtPayload {
   username: string
@@ -45,6 +46,11 @@ export const Header: React.FC = () => {
     }
   };
 
+  const onLogout = () => {
+    dispatch(userSlice.actions.logOut())
+    navigate("/")
+  }
+
   return (
     <div className={styles["app-header"]}>
       {/* top-header */}
@@ -75,7 +81,7 @@ export const Header: React.FC = () => {
                 </Typography.Text>
               </span>
               <Button>{t("header.shoppingCart")}</Button>
-              <Button>{t("header.signOut")}</Button>
+              <Button onClick={onLogout}>{t("header.signOut")}</Button>
             </Button.Group>
           ) : (
             <Button.Group className={styles["button-group"]}>
