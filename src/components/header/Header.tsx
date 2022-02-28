@@ -21,6 +21,8 @@ export const Header: React.FC = () => {
   const { t } = useTranslation();
   let navigate = useNavigate();
 
+  const jwt = useSelector(s => s.user.token)
+
   const menuClickHandler = (e) => {
     console.log(e);
     if (e.key === "new") {
