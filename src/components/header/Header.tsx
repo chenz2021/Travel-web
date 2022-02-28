@@ -35,6 +35,7 @@ export const Header: React.FC = () => {
       setUsername(token.username)
     }
   }, [jwt])
+
   const menuClickHandler = (e) => {
     console.log(e);
     if (e.key === "new") {
@@ -66,7 +67,18 @@ export const Header: React.FC = () => {
           >
             {language === "zh" ? "中文" : "English"}
           </Dropdown.Button>
-          <Button.Group className={styles["button-group"]}>
+          {jwt ? (
+            <Button.Group className={styles["button-group"]}>
+              <span>
+                <Typography.Text strong>
+                  {username}
+                </Typography.Text>
+              </span>
+              <Button>{t("header.shoppingCart")}</Button>
+              <Button>{t("header.signOut")}</Button>
+            </Button.Group>
+          ) : (
+            <Button.Group className={styles["button-group"]}>
             <Button onClick={() => navigate(`/register`)}>
               {t("header.register")}
             </Button>
@@ -74,6 +86,9 @@ export const Header: React.FC = () => {
               {t("header.signin")}
             </Button>
           </Button.Group>
+          )
+        }
+          
         </div>
       </div>
       <Layout.Header className={styles["main-header"]}>
