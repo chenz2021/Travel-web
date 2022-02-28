@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
@@ -13,6 +13,11 @@ import {
   changeLanguageActionCreator,
 } from "../../redux/language/languageActions";
 import { useTranslation } from "react-i18next";
+import jwt_decode, {JwtPayload as DefaultJwtPayload} from "jwt-decode";
+
+interface JwtPayload extends DefaultJwtPayload {
+  username: string
+}
 
 export const Header: React.FC = () => {
   const language = useSelector((state) => state.language.language);
@@ -22,7 +27,14 @@ export const Header: React.FC = () => {
   let navigate = useNavigate();
 
   const jwt = useSelector(s => s.user.token)
+  const [username, setUsername] = useState("")
 
+  useEffect(() => {
+    if(jwt){
+      const token = jwt_decode<JwtPayload>(jwt)
+      setUsername(token.username)
+    }
+  }, [jwt])
   const menuClickHandler = (e) => {
     console.log(e);
     if (e.key === "new") {
